@@ -1,0 +1,19 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+body.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+main {
+    background-color: white;
+    color: black;
+}
+
+main.dark-theme {
+    background-color: black;
+    color: white;
+}

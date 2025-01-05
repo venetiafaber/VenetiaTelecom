@@ -1,0 +1,56 @@
+<!-- hero section -->
+<section
+  class="hero relative bg-purple-100 dark:bg-gray-900 text-center !dark:text-white p-8 w-full"
+>
+  <h1 class="text-3xl font-semibold">Choose Your Perfect Plan</h1>
+  <p class="text-lg mt-4 mb-4">
+    Get the best mobile plans for all your needs. Find the perfect plan today.
+  </p>
+  <app-button
+    (click)="scrollToPlans()"
+    label="Browse Plans"
+    routerLink="#plans"
+  ></app-button>
+</section>
+
+<!-- plan section  -->
+<section class="plans py-6 px-4 dark:bg-gray-900 !dark:text-white" id="plans">
+  <h2 class="text-3xl font-semibold text-center mb-8">Our Prepaid Plans</h2>
+  <div
+    class="plan-container grid sm:grid-cols-1 lg:grid-cols-3 gap-8 px-6 items-center justify-content-around">
+    <div
+      class="plan-card bg-gray-100 dark:bg-gray-900 dark:text-white p-6 rounded shadow-lg hover:shadow-2xl transition flex flex-col justify-content-around"
+      *ngFor="let plan of plans">
+
+      <h3 class="text-2xl font-semibold">{{ plan.name }}</h3>
+
+      <div class="mt-4 ">
+        <p class="text-lg mb-2 dark:text-white">
+          <i class="fas fa-dollar-sign text-purple-500 mr-2"></i>
+          <span>Price: {{ plan.price }}</span>
+        </p>
+        <p class="text-lg mb-2 dark:text-white">
+          <i class="fas fa-calendar-alt text-purple-500 mr-2"></i>
+          <span>Validity: {{ plan.validity }} days</span>
+        </p>
+        <p class="text-lg mb-2 dark:text-white">
+          <i class="fas fa-wifi text-purple-500 mr-2"></i>
+          <span>Data: {{ plan.data }}</span>
+        </p>
+        <p class="text-lg mb-2 dark:text-white mt-4">
+          <!-- <i class="fas fa-info-circle text-purple-500 mr-2"></i> -->
+          <span>{{ plan.details }}</span>
+        </p>
+      </div>
+
+      <div>
+        <app-button
+          class="mt-4"
+          (click)="viewDetails(plan.id)"
+          label="View Details"
+        ></app-button>
+      </div>
+
+    </div>
+  </div>
+</section>

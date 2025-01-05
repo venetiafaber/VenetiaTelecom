@@ -1,0 +1,13 @@
+<!-- if routerLink exists, use <a> element for navigation -->
+<a *ngIf="routerLink"
+    [routerLink]="routerLink"
+    class="btn">
+    {{ label }}
+</a>
+
+<!-- if no routerLink, use a regular button -->
+<button *ngIf="!routerLink"
+        [type]="type"
+        class="btn">
+        {{ label }}
+</button>

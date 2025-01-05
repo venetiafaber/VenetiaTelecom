@@ -1,0 +1,112 @@
+<section
+  *ngIf="plan"
+  class="plan-details bg-gray-100 dark:bg-gray-900 p-8 rounded shadow-md"
+>
+  <!-- image -->
+  <div class="image-container text-center mb-6">
+    <img
+      [src]="plan.image"
+      alt="{{ plan.name }}"
+      class="w-full max-w-lg mx-auto rounded-md shadow-sm"
+    />
+  </div>
+
+  <!-- details -->
+  <div class="details-container">
+    <h1 class="text-3xl font-bold text-center mb-6 dark:text-white">{{ plan.name }}</h1>
+    <div class="details-grid w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <p class="text-lg mb-2 dark:text-white">
+          <i class="fas fa-dollar-sign text-purple-500 mr-2"></i>
+          <span>Price: {{ plan.price }}</span>
+        </p>
+        <p class="text-lg mb-2 dark:text-white">
+          <i class="fas fa-calendar-alt text-purple-500 mr-2"></i>
+          <span>Validity: {{ plan.validity }} days</span>
+        </p>
+      </div>
+
+      <div>
+        <p class="text-lg mb-2 dark:text-white">
+          <i class="fas fa-wifi text-purple-500 mr-2"></i>
+          <span>Data: {{ plan.data }}</span>
+        </p>
+        <p class="text-md mb-2 dark:text-white">
+          <i class="fas fa-info-circle text-purple-500 mr-2"></i>
+          <span>Coverage: {{ plan.coverage }}</span>
+        </p>
+      </div>
+    
+      <!-- features -->
+      <!-- free delivery-->
+      <div class="md:col-span-2 mt-2">
+        <div class="feature-item flex items-center">
+            <i class="fas fa-truck flex text-purple-500 mr-3 text-xl"></i>
+            <div class="text-lg mb-2 dark:text-white">
+                <p class="font-semibold">Free same day delivery</p>
+                <p class="text-gray-600 dark:text-gray-300">Order via the e-shop and your SIM will arrive the same day.</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- recharge -->
+      <div class="md:col-span-2 mt-2">
+        <div class="feature-item flex items-center">
+            <i class="fas fa-sync-alt flex text-purple-500 mr-3 text-xl"></i>
+            <div class="text-lg mb-2 dark:text-white">
+                <p class="font-semibold">Recharge what you need</p>
+                <p class="text-gray-600 dark:text-gray-300">Need more data, calls or international minutes? We’ve got you covered. Recharge online now.</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- more ways to pay -->
+      <div class="md:col-span-2 mt-2">
+        <div class="feature-item flex items-center">
+            <i class="fas fa-credit-card flex text-purple-500 mr-3 text-xl"></i>
+            <div class="text-lg mb-2 dark:text-white">
+                <p class="font-semibold">More ways to pay</p>
+                <p class="text-gray-600 dark:text-gray-300">Recharge and pay your way using a credit or debit card, Apple Pay or Easy Transfer. All our payment methods are easy, safe and 100% secure.</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- activate esim -->
+      <div class="md:col-span-2 mt-2">
+        <div class="feature-item flex items-center">
+            <i class="fas fa-qrcode flex text-purple-500 mr-3 text-xl"></i>
+            <div class="text-lg mb-2 dark:text-white">
+                <p class="font-semibold">Easy to activate e-SIM</p>
+                <p class="text-gray-600 dark:text-gray-300">Order your e-SIM, scan the QR code you received via email and install it on your mobile in less than a minute.</p>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- buy now button -->
+  <div class="text-center mt-8">
+    <app-button 
+        (click)="buyPlan(plan.id)" 
+        label="Buy Now" 
+        routerLink="/plans">
+    </app-button>
+    <app-button 
+        class="ms-4"
+        label="Back to Plans" 
+        routerLink="/plans">
+    </app-button>
+  </div>
+  
+</section>
+
+<!-- back to plans button -->
+<!-- <div class="text-center mt-8"> -->
+  <!-- <a routerLink="/plans" class="btn">Back to Plans</a> -->
+  <!-- <app-button label="Back to Plans" routerLink="/plans"> </app-button> -->
+<!-- </div> -->
+
+<div *ngIf="!plan" class="text-center text-red-600 mt-8">
+  <p>Plan not found</p>
+</div>
