@@ -14,7 +14,7 @@ export class PlanService {
       price: 10, 
       validity: 28, 
       data: '10GB', 
-      details: 'The Hala SIM offers 10GB of data for 28 days with free same-day delivery. Perfect for those who need an affordable, no-fuss option for staying connected without long-term commitments.', 
+      details: 'The Hala SIM offers 10GB of data for 28 days with free same-day delivery. Perfect for staying connected affordably.', 
       image: 'assets/images/prepaid-hala.jpg',
       coverage: '5G'
     },
@@ -25,7 +25,7 @@ export class PlanService {
       price: 12, 
       validity: 30, 
       data: '20GB', 
-      details: 'The Visitor SIM gives you 20GB of data for 30 days, with affordable international calls. Stay connected with family and friends while traveling, without the worry of expensive roaming charges.', 
+      details: 'The Visitor SIM gives you 20GB of data for 30 days, with affordable international calls for staying connected abroad.', 
       image: 'assets/images/prepaid-visitor.png',
       coverage: '5G'
     },
@@ -36,7 +36,7 @@ export class PlanService {
       price: 45, 
       validity: 40, 
       data: '256GB', 
-      details: 'Unlimited Connect offers a comprehensive prepaid package that provides unlimited local calls, 25GB of data, and a longer validity period of 40 days. Ideal for those who want to stay connected without worrying about data limits.', 
+      details: 'Unlimited Connect includes 25GB of data, unlimited local calls, and a 40-day validity. Perfect for worry-free connectivity.', 
       image: 'assets/images/prepaid-unlimited.jpg',
       coverage: '4G'
     }

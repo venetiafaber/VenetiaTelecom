@@ -14,13 +14,15 @@
       <ul class="flex space-x-4">
         <li>
           <a 
-            class="hover:text-purple-500 hover:font-bold dark:bg-black dark:text-white dark:hover:text-purple-500"
-            routerLink="/" routerLinkActive="active-link">Home</a>
+            class="hover:text-purple-500 hover:font-bold dark:bg-black dark:text-white dark:hover:text-purple-500 text-black font-normal"
+            routerLink="/" routerLinkActive="text-purple-500"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <li>
           <a 
-            class="hover:text-purple-500 hover:font-bold dark:bg-black dark:text-white dark:hover:text-purple-500"
-            routerLink="/plans" routerLinkActive="active-link">Plans</a>
+            class="hover:text-purple-500 hover:font-bold dark:bg-black dark:text-white dark:hover:text-purple-500 text-black font-normal"
+            routerLink="/plans" routerLinkActive="text-purple-500"
+            [routerLinkActiveOptions]="{ exact: true }">Plans</a>
         </li>
       </ul>
 
