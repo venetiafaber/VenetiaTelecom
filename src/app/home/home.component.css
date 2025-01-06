@@ -13,13 +13,6 @@
   margin-top: 1rem;
 }
 
-/* .tab-item button {
-  color: #4a5568; 
-  background-color: transparent;
-  border: none;
-  transition: all 0.3s ease-in-out;
-} */
-
 .tab-item button:hover {
   color: #5A2DDE; 
 }

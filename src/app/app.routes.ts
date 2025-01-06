@@ -7,11 +7,22 @@ import { PlanDetailsComponent } from './plan-details/plan-details.component';
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'plans', component: PlansComponent},
-    {path: 'plan-details/:id', component: PlanDetailsComponent},
+    // {
+    //     path: 'plan-details/:id', 
+    //     component: PlanDetailsComponent,
+    //     data: { renderMode: 'prerender'},                           // prerender for parameterized route
+    // },
     {
         path: 'about', 
-        loadComponent: () => import('./about/about.component')      // lazy loading about component
+        loadComponent: () => import('./about/about.component')      // lazy loading the AboutComponent
             .then(c => c.AboutComponent)
     },          
     {path: '*', redirectTo: '/', pathMatch: 'full'}                 // wildcard route
 ];
+
+export function getPrerenderParams(route: string) {
+    if (route == 'plan-details/:id') {
+        return [{id: '1'}, {id: '2'}, {id: '3'}];
+    }
+    return [];
+}

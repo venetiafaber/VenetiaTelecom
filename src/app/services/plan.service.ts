@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'      // service is globally available 
+  providedIn: 'root'      // service is globally available, singleton service
 })
 
 export class PlanService {

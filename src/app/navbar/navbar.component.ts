@@ -12,10 +12,11 @@ import { CommonModule } from '@angular/common';
 
 export class NavbarComponent {
 
-  @Input() isDarkTheme: boolean = false;    // receives state from AppComponent
+  @Input() isDarkTheme: boolean = false;              // receives state from AppComponent
   @Output() toggleDarkMode: EventEmitter<void> = new EventEmitter<void>();
 
   title = 'Navbar';
+  brandName = 'Venetia Telecom';
   isLoggedIn: boolean = false;
   menuItems: string[] = ['Home', 'Plans'];
 
@@ -26,11 +27,5 @@ export class NavbarComponent {
   toggleMenu () {
     this.isMenuOpen = !this.isMenuOpen;
   }
-
-  // method to make the clicked menu active
-  activeMenu () {
-  }
-
-
 
 }

@@ -35,7 +35,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "deployUrl": "/assets/"
           },
           "configurations": {
             "production": {
@@ -85,6 +86,8 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -94,6 +97,19 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/",
+              "/plans",
+              "/about",
+              "/plan-details/1",
+              "/plan-details/2",
+              "/plan-details/3"
+            ]
           }
         }
       }

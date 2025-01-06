@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';     // for routing
 import { FooterComponent } from './footer/footer.component';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @Component({
   selector: 'app-root',
@@ -16,12 +18,6 @@ export class AppComponent {
 
   // state to track theme
   isDarkTheme: boolean = false;
-
-  // method to toggle the theme
-  // toggleTheme() {
-  //   this.isDarkTheme = !this.isDarkTheme;
-  //   document.body.classList.toggle('dark-theme', this.isDarkTheme);
-  // }
 
   toggleDarkMode() {
     this.isDarkTheme = !this.isDarkTheme;
