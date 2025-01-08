@@ -21,12 +21,8 @@ export class PlanDetailsComponent {
     // extracts the plan id from the route
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
-    // finds the corresponding plan
-    // this.plan = this.plans.find(plan => plan.id === id);
-
     // fetches plan details
     this.plan = this.planService.getPlansById(id);
-
   }
 
   buyPlan(planId: number) {

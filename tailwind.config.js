@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: ['./src/**/*.{html,ts}', './src/app/shared/button/*.{html,ts}'],
+  content: [
+    './src/**/*.{html,ts}', 
+    './src/app/**/*.html',
+    './src/app/shared/button/*.{html,ts}'
+  ],
   theme: {
     extend: {
       colors: {

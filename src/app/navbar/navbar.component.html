@@ -9,6 +9,9 @@
     <!-- nav links and buttons -->
     <div class="hidden sm:flex items-center space-x-10 sm:space-x-6 flex-col sm:flex-row space-y-4 sm:space-y-0"
                 [class.hidden]="!isMenuOpen" [class.flex]="isMenuOpen">
+
+      <!-- to check the value of isLoggedIn -->
+      <!-- <p>{{ isLoggedIn }}</p>      -->
       
       <!-- nav links -->
       <ul class="flex space-x-4">
@@ -28,8 +31,19 @@
 
       <!-- buttons login and theme -->
       <div class="flex space-x-2 items-center ml-auto">
-        <app-button label="Login" routerLink="/"></app-button>
+
+        <p *ngIf="isLoggedIn; else loggedOut">Welcome back!</p>
+        <ng-template #loggedOut>
+          <!-- <p>Logged out!</p> -->
+          <app-button label="Login" routerLink="/login"></app-button>
+        </ng-template>
+
+        <!-- <app-button label="Login" routerLink="/login"></app-button> -->
         
+        <app-button *ngIf="isLoggedIn" (click)="logout()" label="Logout">
+
+        </app-button>
+
         <button class="bg-gray-700 hover:bg-black text-white py-2 px-3 rounded" (click)="toggleDarkMode.emit()">
           <span *ngIf="!isDarkTheme">
             <i class="fas fa-sun"></i>

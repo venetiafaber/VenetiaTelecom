@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 import { ButtonComponent } from '../shared/button/button.component';
 import { trigger, style, animate, transition } from '@angular/animations';
-
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-home',
